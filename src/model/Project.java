@@ -60,9 +60,10 @@ public class Project {
 
 	@Override
 	public String toString() {
-		return "Project [id=" + id + ", project_name=" + project_name + ", project_description=" + project_description
-				+ ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
+		return "Project id=" + id + ", project_name=" + project_name + ", project_description=" + project_description
+				+ ", createdAt=" + createdAt + ", updatedAt=" + updatedAt;
 	}
+	
 	
 	
 	

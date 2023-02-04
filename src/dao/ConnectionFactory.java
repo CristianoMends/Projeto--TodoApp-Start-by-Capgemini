@@ -14,16 +14,14 @@ public class ConnectionFactory {
 	public static final String DATABASE = "todoapp";
 	
 	public static final String URL = "jdbc:mysql://"+IP+":"+PORT+"/"+DATABASE+"";
-	public Connection connection;
+	public static Connection connection;
 	
 	public ConnectionFactory() {
 	
 	}
-	public Connection getConnection(){
+	public static Connection getConnection(){
 		try {
-			connection = DriverManager.getConnection(URL);
-			
-			
+			connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);			
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Erro ao conectar banco de dados!");
 			e.printStackTrace();
@@ -32,12 +30,13 @@ public class ConnectionFactory {
 		
 		
 	}
-	public void CloseConnection() {
+	public static void CloseConnection() {
 		try {
+			if(connection != null) {
 			connection.close();
-			
+			}
 		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, "Erro");
+			JOptionPane.showMessageDialog(null, "Erro ao fechar banco de dados!");
 			e.printStackTrace();
 		}
 		

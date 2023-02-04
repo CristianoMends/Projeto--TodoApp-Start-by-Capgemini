@@ -10,6 +10,7 @@ public class Task {
 	private String task_description;
 	private String notes;
 	private boolean isCompleted;
+	private Date deadline;
 	private Date createdAt;
 	private Date updatedAt;
 	
@@ -24,6 +25,22 @@ public class Task {
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
+	
+	
+	public Date getDeadline() {
+		return deadline;
+	}
+
+
+	public void setDeadline(Date deadline) {
+		this.deadline = deadline;
+	}
+
+
+	public Task() {
+		this.createdAt = new Date();
+	}
+	
 
 	public int getId() {
 		return id;
