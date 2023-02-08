@@ -89,13 +89,15 @@ public class ProjectController {
 				project.setCreatedAt(rs.getDate("createdAt"));
 				project.setUpdatedAt(rs.getDate("updatedAt"));
 				
-				projects.add(project);				
+				projects.add(project);	
 				
 			}
+			
 			
 		}catch(SQLException e) {}finally {
 			ConnectionFactory.CloseConnection();
 		}
+		return projects;
 		
 	}
 	
